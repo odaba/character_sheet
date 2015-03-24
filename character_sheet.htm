@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .sheetcontainer {
+        height: 1036px;
+        width: 784px;
+        display: none;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+      }
+      .sheetelement {
+        position: absolute;
+        border: solid thin black;
+      }
+      .ability :first-child { top: 25px; left: 15px; }
+      .ability :last-child { top: 58px; left: 20px; }
+      #sheet1 { background-image: url("csheet1.png"); }
+      #s1e1 { top: 70px; left: 60px; }
+      #s1e2 { top: 50px; left: 345px; }
+      #s1e3 { top: 50px; left: 495px; }
+      #s1e4 { top: 50px; left: 625px; }
+      #s1e5 { top: 85px; left: 345px; }
+      #s1e6 { top: 85px; left: 495px; }
+      #s1e7 { top: 85px; left: 625px; }
+      #s1e8 { top: 175px; left: 30px; }
+      #s1e9 { top: 270px; left: 30px; }
+      #s1e10 { top: 365px; left: 30px; }
+      #s1e11 { top: 460px; left: 30px; }
+      #s1e12 { top: 555px; left: 30px; }
+      #s1e13 { top: 650px; left: 30px; }
+      #sheet2 { background-image: url("csheet2.png"); }
+      #sheet3 { background-image: url("csheet3.png"); }
+    </style>
+  </head>
+  <body onload="show_page(1);">
+    <div id="pager">
+      <a href="" onclick="show_page(1); return false;">Page1</a>
+      <a href="" onclick="show_page(2); return false;">Page2</a>
+      <a href="" onclick="show_page(3); return false;">Page3</a>
+    </div>
+    <div id="sheet1" class="sheetcontainer">
+      <span id="s1e1" class="sheetelement">Character Name</span>
+      <span id="s1e2" class="sheetelement">Levels</span>
+      <span id="s1e3" class="sheetelement">Background</span>
+      <span id="s1e4" class="sheetelement">Player Name</span>
+      <span id="s1e5" class="sheetelement">Race</span>
+      <span id="s1e6" class="sheetelement">Alignment</span>
+      <span id="s1e7" class="sheetelement">Experience Points</span>
+      <div id="s1e8" class="sheetelement ability">
+        <span id="s1e8e1" class="sheetelement">StrMod</span>
+        <span id="s1e8e2" class="sheetelement">Strength</span>
+      </div>
+      <div id="s1e9" class="sheetelement ability">
+        <span id="s1e9e1" class="sheetelement">DexMod</span>
+        <span id="s1e9e2" class="sheetelement">Dexterity</span>
+      </div>
+      <div id="s1e10" class="sheetelement ability">
+        <span id="s1e10e1" class="sheetelement">ConMod</span>
+        <span id="s1e10e2" class="sheetelement">Constitution</span>
+      </div>
+      <div id="s1e11" class="sheetelement ability">
+        <span id="s1e11e1" class="sheetelement">IntMod</span>
+        <span id="s1e11e2" class="sheetelement">Intelligence</span>
+      </div>
+      <div id="s1e12" class="sheetelement ability">
+        <span id="s1e12e1" class="sheetelement">WisMod</span>
+        <span id="s1e12e2" class="sheetelement">Wisdom</span>
+      </div>
+      <div id="s1e13" class="sheetelement ability">
+        <span id="s1e13e1" class="sheetelement">ChaMod</span>
+        <span id="s1e13e2" class="sheetelement">Charisma</span>
+      </div>
+    </div>
+    <div id="sheet2" class="sheetcontainer"></div>
+    <div id="sheet3" class="sheetcontainer"></div>
+    <script type="text/javascript">
+      function g(n) { return document.getElementById(n); }
+      function show_page(n) {
+        g("sheet1").style = g("sheet2").style = g("sheet3").style = "";
+        switch(n) {
+          case 1: g("sheet1").style.display = "block"; break;
+          case 2: g("sheet2").style.display = "block"; break;
+          case 3: g("sheet3").style.display = "block"; break;
+        }
+      }
+    </script>
+  </body>
+</html>
